@@ -13,21 +13,20 @@ import Autocomplete from '@mui/material/Autocomplete';
 
 export default function NavBar() {
 	const [searchTerm, setSearchTerm] = useState('');
-	const [isFocused, setIsFocused] = useState(false);
 	const navigate = useNavigate();
 
 	const handleSearch = (event) => {
 		event.preventDefault();
 		const filteredCities = citiesList.filter((city) =>
-		  city.name.toLowerCase().startsWith(searchTerm.toLowerCase())
+			city.name.toLowerCase().startsWith(searchTerm.toLowerCase())
 		);
 		// Perform search logic here, e.g., navigate to the city page
 		// For simplicity, let's assume the city ID is the same as the search term
 		if (filteredCities.length > 0) {
-		  navigate(`/city/${filteredCities[0].id}`);
+			navigate(`/city/${filteredCities[0].id}`);
 		}
-	  };
-	  
+	};
+
 	return (
 		<Box sx={{ flexGrow: 1 }} className="navbar">
 			<AppBar position="static" sx={{ backgroundColor: '#42365C' }}>
@@ -57,13 +56,10 @@ export default function NavBar() {
 									size="small"
 									value={searchTerm}
 									onChange={(e) => setSearchTerm(e.target.value)}
-									onFocus={() => setIsFocused(true)}
-									onBlur={() => setIsFocused(false)}
 									sx={{
-										width: 300, // Set the width of the input field
+										width: 300,
 										marginLeft: '10px',
 										'& .MuiOutlinedInput-root': {
-											color: isFocused ? '#e6e6e8' : 'white',
 											'& fieldset': {
 												borderColor: 'white',
 											},
@@ -75,19 +71,17 @@ export default function NavBar() {
 											},
 										},
 										'& .MuiInputLabel-root': {
-											color: 'white',
+											color: 'white !important',
 										},
 										'& .MuiInputBase-input': {
-											color: 'white',
+											color: 'white !important',
 										},
 										'& .MuiOutlinedInput-input': {
 											backgroundColor: '#524570',
 										},
 									}}
-									onKeyDown={(e) => {
-										if (e.key === 'Enter') {
-											handleSearch(e);
-										}
+									InputLabelProps={{
+										style: { color: 'white' }, // Ensure the label is white
 									}}
 								/>
 							)}
@@ -101,8 +95,6 @@ export default function NavBar() {
 							}}
 						/>
 					</form>
-
-
 				</Toolbar>
 			</AppBar>
 		</Box>
