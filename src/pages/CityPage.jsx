@@ -10,6 +10,7 @@ import Stars from '../components/Starts'
 
 import Footer from './Footer';
 
+
 export default function CityPage() {
 	const { id } = useParams();
 	const city = citiesList.find(city => city.id === parseInt(id));

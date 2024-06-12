@@ -1,14 +1,17 @@
 /* import 'react-image-gallery/styles/css/image-gallery.css'; */
-
 body {
   font-family: "Marmelad", sans-serif;
+  /* background-color: #f3eded!important;  */
+  margin: 0; /* Убедитесь, что нет отступов */
+  padding: 0; /* Убедитесь, что нет отступов */
+  height: 100%; /* Убедитесь, что занимает всю высоту */
 }
 /* 
 font-family: "Marmelad", sans-serif;
 font-family: "Neucha", cursive; */
 
 header {
-  background-color: #fbfbf9;
+  background-color: rgb(255, 253, 253);
   height: 120px; /* Высота */
   width: 100%; /* Ширина */
 }
@@ -129,3 +132,45 @@ p {
 .footer-bottom {
   margin-top: 150px;
 }
+
+/* Определение стилей для контейнеров карточек */
+.attraction-cards,
+.food-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -10px; /* Отрицательный отступ для компенсации отступов элементов */
+}
+
+/* Определение стилей для каждой карточки в контейнере */
+.attraction-cards > *, 
+.food-cards > * {
+  flex: 1 0 calc(25% - 20px); /* Четыре карточки на строку, с учетом отступов */
+  margin: 10px; /* Отступ вокруг каждой карточки */
+  box-sizing: border-box; /* Учет отступов в расчетах ширины */
+}
+
+/* Стили для каждой карточки */
+.attraction-card {
+  width: 100%;
+  max-width: 245px;
+  box-sizing: border-box;
+}
+
+/* Стили для контейнера действия карточки */
+.card-action-area {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Стили для медиа внутри карточки */
+.card-media {
+  height: 140px;
+  width: 100%;
+  object-fit: cover;
+  margin: 0; /* Убедимся, что нет дополнительных отступов */
+  padding: 0; /* Убедимся, что нет дополнительных отступов */
+}
+
+

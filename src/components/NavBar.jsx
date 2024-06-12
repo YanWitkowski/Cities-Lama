@@ -10,7 +10,7 @@ import MapIcon from '@mui/icons-material/Map';
 export default function NavBar() {
 	return (
 		<Box sx={{ flexGrow: 1 }} className="navbar">
-			<AppBar position="static">
+			<AppBar position="static" sx={{backgroundColor: '#42365C' }}>
 				<Toolbar>
 					<MapIcon style={{ marginRight: '10px', fontSize: '50px' }} />
 
