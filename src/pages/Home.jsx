@@ -1,8 +1,8 @@
 import React from 'react';
-import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import StyledCard from '../components/CustomCard';
 import { CardActionArea } from '@mui/material';
 import { citiesList } from '../helpers/data'
 import { Link } from 'react-router-dom';
@@ -14,7 +14,7 @@ export default function Home() {
 			{citiesList.map((city) => (
 				<div key={city.id} style={{ margin: '10px', width: "100%", maxWidth: 345 }}>
 					<Link to={`/city/${city.id}`} style={{ textDecoration: 'none' }}>
-						<Card sx={{ width: "100%", maxWidth: 345 }}>
+						<StyledCard sx={{ width: "100%", maxWidth: 345 }}>
 							<CardActionArea>
 								<CardMedia
 									component="img"
@@ -32,7 +32,7 @@ export default function Home() {
 									</Typography>
 								</CardContent>
 							</CardActionArea>
-						</Card>
+						</StyledCard>
 					</Link>
 				</div>
 			))}
