@@ -9,7 +9,7 @@ import '../index.css';
 const FoodCard = ({ food }) => {
   return (
     <StyledCard sx={{ width: "100%", maxWidth: 245 }}>
-      <CardActionArea className="card-action-area">
+      <CardActionArea className="card-action-area" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
         <CardMedia
           component="img"
           className="card-media"

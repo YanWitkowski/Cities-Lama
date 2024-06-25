@@ -133,7 +133,7 @@ p {
   margin-top: 150px;
 }
 
-/* Определение стилей для контейнеров карточек */
+/* Контейнеры карточек */
 .attraction-cards,
 .food-cards {
   display: flex;
@@ -142,7 +142,7 @@ p {
   margin: -10px; /* Отрицательный отступ для компенсации отступов элементов */
 }
 
-/* Определение стилей для каждой карточки в контейнере */
+/* Стили для каждой карточки в контейнере */
 .attraction-cards > *, 
 .food-cards, .cities > * {
   flex: 1 0 calc(25% - 20px); /* Четыре карточки на строку, с учетом отступов */
@@ -161,13 +161,25 @@ p {
 .card-action-area {
   display: flex;
   flex-direction: column;
+  align-items: center; /* Центрирование по горизонтали */
+  justify-content: flex-start; /* Выравнивание по верхнему краю */
   height: 100%;
+}
+
+/* Стили для контента карточки */
+.card-content {
+  width: 100%;
+  flex-grow: 1; /* Чтобы контент занимал всю доступную высоту */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Прикрепить содержимое к верху */
+  align-items: center; /* Центрирование по горизонтали */
 }
 
 /* Стили для медиа внутри карточки */
 .card-media {
-  height: 140px;
   width: 100%;
+  height: 140px;
   object-fit: cover;
   margin: 0; /* Убедимся, что нет дополнительных отступов */
   padding: 0; /* Убедимся, что нет дополнительных отступов */
